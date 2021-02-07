@@ -8,8 +8,8 @@ class GAN(tf.keras.Model):
         self.generator = GENERATOR(self.latent_dim, name='generator')
         self.discriminator = DISCRIMINATOR(name='discriminator')
 
-    def compils(self, discriminator_optimizer, generator_optimizer):
-        super(GAN, self).complie()
+    def compile(self, discriminator_optimizer, generator_optimizer):
+        super(GAN, self).compile()
         self.discriminator_optimizer = discriminator_optimizer
         self.generator_optimizer = generator_optimizer
 
@@ -24,16 +24,16 @@ class GAN(tf.keras.Model):
 
     def Generator_Loss(self, z):
         score = self.discriminator(z)
-        label = tf.ones_like(z)
+        label = tf.ones_like(score)
         return tf.keras.losses.binary_crossentropy(y_true=label, y_pred=score)
 
     def Discriminator_Loss(self, x, z):
         real = self.discriminator(x)
-        real_label = tf.ones_like(x)
+        real_label = tf.ones_like(real)
         real_loss = tf.keras.losses.binary_crossentropy(y_true=real_label, y_pred=real)
 
         generated = self.discriminator(z)
-        generated_label = tf.zeros_like(z)
+        generated_label = tf.zeros_like(generated)
         generated_loss = tf.keras.losses.binary_crossentropy(y_true=generated_label, y_pred=generated)
         return real_loss + generated_loss
 
