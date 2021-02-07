@@ -2,3 +2,5 @@
 */.ipynb_checkpoints/*
 img/image*
 __pycache__
+gan_save/
+GAN_.ipynb
