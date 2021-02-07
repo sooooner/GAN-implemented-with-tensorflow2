@@ -27,11 +27,10 @@ Generative Adversarial Networks[[link](https://arxiv.org/abs/1406.2661)]
 ## Usage
 
 ```
-python GAN.py --fig_save=True --model_save=True
+python GAN.py --model_save=True
 ```
-
-+ --fig_save : Whether to save the generated image(bool, default=False)  
-+ --model_save : Whether to save the generated model(bool, default=True)  
+ 
++ --model_save : Whether to save the generated model weight(bool, default=True)  
 
 ## Result
 
