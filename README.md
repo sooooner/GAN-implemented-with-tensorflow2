@@ -19,7 +19,7 @@ Generative Adversarial Networks[[link](https://arxiv.org/abs/1406.2661)]
     └── utils.py                                 # Other functions to draw a plot
 ├── .gitignore         
 ├── requirements.txt   
-├── config.txt                                   # model config
+├── config.py                                   # model config
 ├── GAN.ipynb                                    # Examples of progress 
 └── GAN.py                                       # model training and save weight py
 ```
